@@ -1,3 +1,4 @@
+# coding=utf-8
 numA = list(map(int, input()))[::-1]
 numB = list(map(int, input()))[::-1]  # list(map(int, input())).reverse()会报错。
 
