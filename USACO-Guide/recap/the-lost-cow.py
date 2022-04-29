@@ -11,23 +11,16 @@ cur_len = 0
 while True:
     '''
     移动一段距离
+    如果终点在移动方向 则判断一下会不会到达，否则就不用判断了
     更新cur_len
-        判断有没有到达重点
     更新next_move
     '''
-    temp = cur_pos
-    if next_move > 0:
-        if end > cur_pos:
-            cur_pos = end if cur_pos + next_move > end else cur_pos + next_move
-        else:
-            cur_pos = cur_pos + next_move
-    else:
-        if end < cur_pos:
-            cur_pos = end if cur_pos + next_move < end else cur_pos + next_move
-        else:
-            cur_pos = cur_pos + next_move
-    cur_len += abs(cur_pos - temp)
-    next_move = next_move * -2
-    if cur_pos == end:
+    if (end - cur_pos) * next_move > 0 and abs(next_move) >= abs(end - cur_pos):
+        # 同方向
+        cur_len += abs(end - cur_pos)
         break
+    else:
+        cur_len += abs(next_move)
+        cur_pos += next_move
+    next_move *= -2
 print(cur_len)
