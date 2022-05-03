@@ -68,9 +68,9 @@ def print_grids():
 
 
 def search_path(path_index, cor_x, cor_y):
-    # print_grids()
-    # time.sleep(0.1)
-    # os.system("clear")
+    print_grids()
+    time.sleep(0.5)
+    os.system("clear")
 
     # 染色
     grids[cor_x][cor_y] = 1
@@ -87,28 +87,28 @@ def search_path(path_index, cor_x, cor_y):
     ret = 0
     if given_path[path_index] != "?":
         if given_path[path_index] == "U" and approachable(cor_x, cor_y, -1, 0):
-            # print("↑")
+            print("↑", "U")
             ret += search_path(path_index + 1, cor_x - 1, cor_y)
         elif given_path[path_index] == "R" and approachable(cor_x, cor_y, 0, 1):
-            # print("→")
+            print("→", "R")
             ret += search_path(path_index + 1, cor_x, cor_y + 1)
         elif given_path[path_index] == "D" and approachable(cor_x, cor_y, 1, 0):
-            # print("↓")
+            print("↓", "D")
             ret += search_path(path_index + 1, cor_x + 1, cor_y)
         elif given_path[path_index] == "L" and approachable(cor_x, cor_y, 0, -1):
-            # print("←")
+            print("←", "L")
             ret += search_path(path_index + 1, cor_x, cor_y - 1)
     else:
         for x, y in direction:
             if approachable(cor_x, cor_y, x, y):
-                # if x == -1 and y == 0:
-                #     print("↑")
-                # if x == 0 and y == 1:
-                #     print("→")
-                # if x == 1 and y == 0:
-                #     print("↓")
-                # if x == 0 and y == -1:
-                #     print("←")
+                if x == -1 and y == 0:
+                    print("↑")
+                if x == 0 and y == 1:
+                    print("→")
+                if x == 1 and y == 0:
+                    print("↓")
+                if x == 0 and y == -1:
+                    print("←")
                 ret += search_path(path_index + 1, cor_x + x, cor_y + y)
     # 去色
     grids[cor_x][cor_y] = 0
