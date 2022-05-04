@@ -9,6 +9,7 @@ N = int(input())
 guards = [list(map(int, input().split())) for _ in range(N)]
 time_map = [0 for _ in range(1000)]
 total_time = 0
+# 这道题很巧妙的利用了一个数组来表示cover住的时间，不然这道题还是比较麻烦的
 for [start, end] in guards:
     for j in range(start, end):
         time_map[j] += 1
