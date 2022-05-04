@@ -16,4 +16,3 @@ for i in range((third // sec) + 1):
     total = ((third - i * sec) // fir) * fir + i * sec
     max_num = max(max_num, total)
 print(max_num)
-

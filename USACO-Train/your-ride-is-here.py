@@ -1,0 +1,29 @@
+"""
+ID: orenbek1
+LANG: PYTHON3
+TASK: ride
+"""
+
+
+def getNumber(str):
+    str = str.encode()
+    result = 1
+    for c in str:
+        result *= c - 64
+    return result % 47
+
+
+fin = open('ride.in', 'r')
+fout = open('ride.out', 'w')
+
+cometName = fin.readline().strip()
+groupName = fin.readline().strip()
+
+cometNumber = getNumber(cometName)
+groupNumber = getNumber(groupName)
+
+if cometNumber == groupNumber:
+    fout.write("GO\n")
+else:
+    fout.write("STAY\n")
+fout.close()

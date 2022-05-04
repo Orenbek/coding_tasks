@@ -5,6 +5,7 @@ from functools import reduce
 
 sys.stdin = open("cowsignal.in", "r")
 sys.stdout = open("cowsignal.out", "w")
+# 矩阵倍增问题
 
 rows, cols, k = map(int, input().split())
 matrix = [input() for _ in range(rows)]

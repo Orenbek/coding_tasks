@@ -4,6 +4,7 @@ import sys
 
 sys.stdin = open("lostcow.in", "r")
 sys.stdout = open("lostcow.out", "w")
+# 折返走 找丢失的奶牛
 
 
 def main():

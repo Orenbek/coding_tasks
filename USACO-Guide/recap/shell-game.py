@@ -5,9 +5,6 @@ import sys
 sys.stdin = open('shell.in', 'r')
 sys.stdout = open('shell.out', 'w')
 
-'''
-读取一行 
-'''
 N = int(input())
 count1, count2, count3 = 0, 0, 0
 pos = [1, 2, 3]
@@ -22,4 +19,3 @@ for _ in range(N):
         count3 += 1
 print(max(count1, count2, count3))
 # 12min
-

@@ -55,5 +55,3 @@ while True:
         nth_sag_of_road += 1
         nth_sag_of_trip += 1
         # 两者正好相等 需要同时走入下一个路段
-
-
